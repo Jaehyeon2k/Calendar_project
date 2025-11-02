@@ -19,6 +19,12 @@ export default function EventForm({
 
   const submit = async (e) => {
     e.preventDefault();
+    // SCHOOL(전체 학사)은 관리자만 생성/수정 허용
+    const user = JSON.parse(localStorage.getItem("yju_user") || "null");
+    if (scope === "SCHOOL" && user?.role !== "ADMIN") {
+      alert("관리자만 변경할 수 있습니다.");
+      return;
+    }
     const payload = { ...initial, ...form, scope, deptId };
     if (mode === "edit") await api.put(`/events/${initial.id}`, payload);
     else await api.post("/events", payload);
