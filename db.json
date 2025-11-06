@@ -18,13 +18,8 @@
     }
   ],
   "users": [
-    {
-      "id": 1,
-      "email": "123@g.yju.ac.kr",
-      "password": "1234",
-      "displayName": "홍길동",
-      "deptId": 1
-    }
+    { "id": 1, "email": "root", "password": "1234", "displayName": "관리자", "deptId": null, "role": "ADMIN" },
+    { "id": 2, "email": "yju@yju.ac.kr", "password": "1234", "displayName": "홍길동", "deptId": 1, "role": "USER" }
   ],
   "events": [
     {
